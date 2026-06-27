@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turtle Diving Gili Trawangan | Shark Diving Gili Islands - Blue Marlin Marine Encounters</title>
+<meta name="description" content="Experience incredible turtle diving and shark diving in Gili Trawangan with Blue Marlin. Encounter green sea turtles, reef sharks, and amazing marine life in the crystal-clear waters of the Gili Islands, Indonesia.">
+<meta name="keywords" content="turtle diving gili trawangan, shark diving gili islands, marine life diving indonesia, turtle encounters gili, reef shark diving, underwater wildlife indonesia">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #0A2463;
+  --secondary: #00B4D8;
+  --accent: #FB8500;
+  --light: #CAF0F8;
+  --dark: #03045E;
+  --white: #ffffff;
+  --gray: #f4f7fb;
+  --success: #06D6A0;
+  --turtle-green: #2D5016;
+  --ocean-blue: #006994;
+  --coral: #FF6B6B;
+  --sand: #F4E4C1;
+  --gradient-ocean: linear-gradient(135deg, #006994, #00B4D8);
+  --gradient-turtle: linear-gradient(135deg, #2D5016, #52796F);
+  --gradient-coral: linear-gradient(135deg, #FF6B6B, #FF8E53);
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a2e;
+  background: var(--white);
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+/* NAVBAR */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: rgba(0, 105, 148, 0.98);
+  backdrop-filter: blur(22px);
+  padding: 22px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 45px rgba(0,0,0,0.25);
+  border-bottom: 4px solid var(--turtle-green);
+}
+.navbar.scrolled {
+  padding: 16px 5%;
+  background: rgba(0, 105, 148, 0.99);
+  box-shadow: 0 8px 55px rgba(0,0,0,0.35);
+}
+.logo {
+  color: var(--white); font-size: 30px; font-weight: 900;
+  display: flex; align-items: center; gap: 16px;
+  font-family: 'Satisfy', cursive;
+  letter-spacing: 1px;
+}
+.logo i { 
+  color: var(--turtle-green); font-size: 38px; 
+  animation: swim 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(45,80,22,0.8));
+}
+@keyframes swim {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-5deg); }
+}
+.nav-links { display: flex; list-style: none; gap: 42px; }
+.nav-links a {
+  color: var(--white); text-decoration: none; font-weight: 700;
+  font-size: 14px; cursor: pointer; transition: 0.3s;
+  position: relative; padding: 8px 0;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  font-size: 13px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 50%; 
+  width: 0; height: 4px; transform: translateX(-50%);
+  background: var(--turtle-green); transition: 0.5s;
+  box-shadow: 0 0 15px var(--turtle-green);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a:hover, .nav-links a.active { 
+  color: var(--turtle-green); 
+  text-shadow: 0 0 12px rgba(45,80,22,0.7);
+}
+.menu-toggle { 
+  display: none; color: white; font-size: 32px; 
+  cursor: pointer; background: none; border: none; 
+}
+
+/* PAGE SYSTEM */
+.page { display: none; min-height: 100vh; padding-top: 92px; animation: fadeIn 1s ease; }
+.page.active { display: block; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HERO */
+.hero {
+  height: 100vh; min-height: 750px;
+  background: linear-gradient(135deg, rgba(0,105,148,0.88), rgba(45,80,22,0.82)),
+              url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600') center/cover fixed;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: var(--white); position: relative;
+  margin-top: -92px; padding-top: 92px;
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 240px; 
+  background: linear-gradient(to top, rgba(255,255,255,1), transparent);
+}
+.hero::after {
+  content: '🐢'; position: absolute; 
+  font-size: 150px; opacity: 0.08;
+  top: 20%; right: 10%;
+  animation: floatTurtle 8s ease-in-out infinite;
+}
+@keyframes floatTurtle {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-30px, -30px) rotate(10deg); }
+}
+.hero-content { 
+  max-width: 1150px; padding: 35px; z-index: 2; 
+  animation: heroOceanEntrance 1.5s ease;
+}
+@keyframes heroOceanEntrance {
+  from { opacity: 0; transform: translateY(80px) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.hero-badge {
+  display: inline-block; 
+  background: var(--gradient-turtle);
+  padding: 16px 40px; border-radius: 50px;
+  font-size: 13px; font-weight: 900; letter-spacing: 3px;
+  margin-bottom: 32px; text-transform: uppercase;
+  box-shadow: 0 16px 55px rgba(45,80,22,0.7);
+  animation: badgeFloat 3s ease-in-out infinite;
+  border: 3px solid rgba(255,255,255,0.4);
+}
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 7rem); font-weight: 900;
+  margin-bottom: 34px; line-height: 0.92;
+  text-shadow: 6px 6px 50px rgba(0,0,0,0.9);
+  letter-spacing: -2px;
+}
+.hero h1 span { 
+  background: linear-gradient(90deg, var(--turtle-green), #52796F, var(--success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  animation: oceanShimmer 5s ease-in-out infinite;
+  background-size: 200% auto;
+  filter: drop-shadow(0 0 30px rgba(45,80,22,0.9));
+}
+@keyframes oceanShimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+.hero p { 
+  font-size: clamp(1.25rem, 2.8vw, 1.7rem); 
+  margin-bottom: 50px; font-weight: 300; 
+  text-shadow: 3px 3px 28px rgba(0,0,0,0.8);
+  line-height: 1.8; max-width: 1020px; 
+  margin-left: auto; margin-right: auto;
+}
+.btn-group { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  padding: 22px 52px; border: none; border-radius: 50px;
+  font-size: 14px; font-weight: 900; cursor: pointer;
+  text-decoration: none; display: inline-block;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 1.5px; text-transform: uppercase;
+  position: relative; overflow: hidden;
+}
+.btn::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  width: 0; height: 0; border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  transform: translate(-50%, -50%);
+  transition: width 0.8s, height 0.8s;
+}
+.btn:hover::before {
+  width: 500px; height: 500px;
+}
+.btn-primary {
+  background: var(--gradient-turtle);
+  color: white;
+  box-shadow: 0 18px 55px rgba(45,80,22,0.7);
+  border: 3px solid rgba(255,255,255,0.35);
+}
+.btn-primary:hover { 
+  transform: translateY(-8px) scale(1.05); 
+  box-shadow: 0 26px 75px rgba(45,80,22,0.9); 
+}
+.btn-outline {
+  background: transparent; color: var(--turtle-green); 
+  border: 3px solid var(--turtle-green);
+  box-shadow: 0 0 35px rgba(45,80,22,0.5);
+}
+.btn-outline:hover { 
+  background: var(--turtle-green); color: white; 
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 18px 55px rgba(45,80,22,0.7);
+}
+
+/* SECTIONS */
+.section { padding: 120px 5%; }
+.section-title { text-align: center; margin-bottom: 90px; }
+.section-title .subtitle {
+  display: inline-block; 
+  background: linear-gradient(135deg, rgba(45,80,22,0.25), rgba(82,121,111,0.35)); 
+  color: var(--primary);
+  padding: 12px 34px; border-radius: 50px; 
+  font-size: 12px; font-weight: 900; 
+  margin-bottom: 26px; letter-spacing: 3.5px;
+  text-transform: uppercase;
+  box-shadow: 0 7px 35px rgba(45,80,22,0.4);
+  border: 2px solid rgba(45,80,22,0.5);
+}
+.section-title h2 {
+  font-size: clamp(2.8rem, 6.5vw, 4.8rem); 
+  color: var(--primary);
+  margin-bottom: 28px; font-weight: 900;
+  line-height: 1; letter-spacing: -1.5px;
+}
+.section-title p { 
+  color: #666; max-width: 1000px; margin: 0 auto; 
+  font-size: 20px; line-height: 1.9; 
+}
+.section-title::after {
+  content: ''; display: block; width: 160px; height: 8px;
+  background: var(--gradient-turtle); 
+  margin: 34px auto 0; border-radius: 4px;
+  box-shadow: 0 5px 28px rgba(45,80,22,0.6);
+}
+
+/* MARINE LIFE CARDS */
+.marine-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 60px; max-width: 1600px; margin: 0 auto;
+}
+.marine-card {
+  background: white; border-radius: 35px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.16);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 4px solid rgba(0,105,148,0.2);
+  position: relative; overflow: hidden;
+}
+.marine-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 12px;
+  background: var(--gradient-ocean);
+  transform: scaleX(0); transform-origin: left;
+  transition: 0.8s;
+}
+.marine-card:hover::before { transform: scaleX(1); }
+.marine-card:hover { 
+  transform: translateY(-25px) scale(1.03); 
+  box-shadow: 0 45px 110px rgba(0,105,148,0.45);
+  border-color: var(--turtle-green);
+}
+.marine-img {
+  height: 280px; overflow: hidden;
+  border-radius: 35px 35px 0 0;
+  position: relative;
+}
+.marine-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s ease;
+}
+.marine-card:hover .marine-img img {
+  transform: scale(1.15);
+}
+.marine-badge {
+  position: absolute; top: 20px; right: 20px;
+  background: var(--gradient-turtle);
+  color: white; padding: 10px 24px;
+  border-radius: 30px; font-size: 13px;
+  font-weight: 900; letter-spacing: 1px;
+  box-shadow: 0 8px 30px rgba(45,80,22,0.6);
+}
+.marine-body {
+  padding: 45px;
+}
+.marine-icon {
+  font-size: 60px; margin-bottom: 20px;
+  display: block;
+}
+.marine-body h3 { 
+  color: var(--primary); margin-bottom: 18px; 
+  font-size: 32px; font-weight: 900;
+}
+.marine-body p { 
+  color: #555; font-size: 17px; line-height: 1.9; 
+  margin-bottom: 25px;
+}
+.marine-features {
+  list-style: none; margin: 28px 0;
+}
+.marine-features li {
+  padding: 15px 0; display: flex; 
+  align-items: center; gap: 18px; 
+  color: #444; font-size: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+.marine-features li:last-child { border-bottom: none; }
+.marine-features li i { 
+  color: var(--ocean-blue); font-size: 22px; 
+  min-width: 28px;
+}
+
+/* SPECIES SHOWCASE */
+.species-section {
+  background: var(--gradient-ocean);
+  color: white; padding: 125px 5%; 
+  position: relative; overflow: hidden;
+}
+.species-section::before,
+.species-section::after {
+  content: ''; position: absolute; 
+  border-radius: 50%; 
+  background: rgba(255,255,255,0.06);
+}
+.species-section::before {
+  top: -200px; right: -200px;
+  width: 800px; height: 800px;
+}
+.species-section::after {
+  bottom: -250px; left: -250px;
+  width: 900px; height: 900px;
+}
+.species-content { 
+  position: relative; z-index: 1; 
+  max-width: 1500px; margin: 0 auto; 
+}
+.species-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px; margin-top: 75px;
+}
+.species-card {
+  background: rgba(255,255,255,0.12);
+  padding: 50px; border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 3px solid rgba(255,255,255,0.25);
+  transition: 0.6s; text-align: center;
+}
+.species-card:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-15px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.species-emoji {
+  font-size: 80px; margin-bottom: 25px;
+  display: block;
+  animation: bob 3s ease-in-out infinite;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+.species-card h4 {
+  font-size: 26px; margin-bottom: 16px;
+  font-weight: 900;
+}
+.species-card p {
+  font-size: 17px; opacity: 0.95;
+  line-height: 1.8;
+}
+
+/* CONTENT BLOCK */
+.content-block {
+  max-width: 1400px; margin: 0 auto; padding: 0 35px;
+}
+.content-block h3 {
+  color: var(--primary); margin: 50px 0 26px; 
+  font-size: 2.6rem; font-weight: 900;
+}
+.content-block p { 
+  margin-bottom: 30px; color: #444; 
+  font-size: 18px; line-height: 2.05; 
+}
+.content-block a {
+  color: var(--ocean-blue); font-weight: 700; 
+  text-decoration: none;
+  border-bottom: 3px solid transparent; 
+  transition: 0.3s;
+}
+.content-block a:hover { 
+  border-color: var(--ocean-blue); 
+  color: var(--turtle-green); 
+}
+.content-block ul {
+  margin: 35px 0; padding-left: 0; list-style: none;
+}
+.content-block ul li {
+  padding: 18px 0 18px 58px; position: relative; 
+  color: #444; line-height: 1.95;
+}
+.content-block ul li::before {
+  content: '🌊'; position: absolute; 
+  left: 0; top: 18px;
+  font-size: 28px;
+}
+.highlight-box {
+  background: linear-gradient(135deg, rgba(45,80,22,0.18), rgba(82,121,111,0.28));
+  padding: 50px; border-radius: 30px; margin: 50px 0;
+  border-left: 14px solid var(--turtle-green);
+  box-shadow: 0 20px 70px rgba(45,80,22,0.35);
+  position: relative;
+}
+.highlight-box::before {
+  content: '🐢'; position: absolute;
+  top: 30px; right: 30px;
+  font-size: 70px; opacity: 0.25;
+}
+.highlight-box p { 
+  margin-bottom: 0; font-size: 20px; 
+  font-weight: 600; position: relative; z-index: 1;
+  color: var(--dark);
+}
+.info-card {
+  background: var(--gray); padding: 45px;
+  border-radius: 28px; margin: 45px 0;
+  border: 4px solid var(--light);
+  box-shadow: 0 15px 60px rgba(0,180,216,0.2);
+}
+
+/* DIVE SITES */
+.sites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 45px; max-width: 1450px; margin: 60px auto 0;
+}
+.site-card {
+  background: white; padding: 45px;
+  border-radius: 28px;
+  box-shadow: 0 18px 65px rgba(0,0,0,0.13);
+  transition: 0.6s;
+  border: 3px solid rgba(0,105,148,0.15);
+}
+.site-card:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 32px 90px rgba(0,105,148,0.35);
+  border-color: var(--ocean-blue);
+}
+.site-icon {
+  width: 90px; height: 90px;
+  background: var(--gradient-ocean);
+  border-radius: 50%;
+  display: flex; align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  color: white; font-size: 40px;
+  box-shadow: 0 15px 45px rgba(0,105,148,0.5);
+  border: 5px solid rgba(0,105,148,0.3);
+}
+.site-card h4 {
+  color: var(--primary); margin-bottom: 18px;
+  font-size: 24px; font-weight: 800;
+  text-align: center;
+}
+.site-card p {
+  color: #666; font-size: 16px;
+  line-height: 1.85; text-align: center;
+}
+
+/* CONSERVATION */
+.conservation-panel {
+  background: var(--gradient-turtle);
+  color: white; padding: 70px;
+  border-radius: 35px; margin: 60px 0;
+  box-shadow: 0 25px 80px rgba(45,80,22,0.5);
+  position: relative; overflow: hidden;
+}
+.conservation-panel::before {
+  content: '♻️'; position: absolute;
+  top: 30px; right: 40px;
+  font-size: 140px; opacity: 0.15;
+}
+.conservation-panel h3 {
+  color: white; font-size: 2.8rem;
+  margin-bottom: 30px; position: relative; z-index: 1;
+}
+.conservation-panel p {
+  position: relative; z-index: 1;
+  font-size: 19px; line-height: 1.9;
+  margin-bottom: 20px;
+}
+.conservation-panel ul {
+  position: relative; z-index: 1;
+  list-style: none; margin: 25px 0; padding: 0;
+}
+.conservation-panel ul li {
+  padding: 16px 0 16px 55px;
+  font-size: 18px; line-height: 1.85;
+  position: relative;
+}
+.conservation-panel ul li::before {
+  content: '✓'; position: absolute;
+  left: 0; top: 16px;
+  width: 38px; height: 38px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex; align-items: center;
+  justify-content: center;
+  font-weight: 900; font-size: 24px;
+}
+
+/* GALLERY PREVIEW */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px; margin: 50px 0;
+}
+.gallery-item {
+  height: 300px; border-radius: 25px;
+  overflow: hidden; position: relative;
+  cursor: pointer; box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.2);
+}
+.gallery-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 30px; color: white;
+  transform: translateY(100%);
+  transition: 0.5s;
+}
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+.gallery-overlay h5 {
+  font-size: 20px; margin-bottom: 8px;
+}
+
+/* CONTACT */
+.contact-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; 
+  gap: 80px; max-width: 1500px; margin: 0 auto;
+}
+.contact-info-box {
+  background: var(--gradient-ocean);
+  color: white;
+  padding: 70px; border-radius: 35px;
+  box-shadow: 0 24px 80px rgba(0,105,148,0.45);
+  position: relative; overflow: hidden;
+}
+.contact-info-box::before {
+  content: ''; position: absolute;
+  top: -140px; right: -140px;
+  width: 400px; height: 400px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+.contact-info-box h3 {
+  color: var(--turtle-green); margin-bottom: 42px; 
+  font-size: 34px; font-weight: 900;
+  position: relative; z-index: 1;
+  text-shadow: 0 0 20px rgba(45,80,22,0.8);
+}
+.contact-item {
+  display: flex; gap: 30px; margin-bottom: 40px; 
+  align-items: flex-start;
+  position: relative; z-index: 1;
+}
+.contact-icon {
+  background: rgba(45,80,22,0.35); 
+  color: var(--turtle-green); 
+  width: 80px; height: 80px;
+  border-radius: 50%; display: flex; 
+  align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 30px;
+  box-shadow: 0 16px 45px rgba(0,0,0,0.35);
+  border: 4px solid rgba(45,80,22,0.5);
+}
+.contact-item h4 { 
+  color: var(--turtle-green); margin-bottom: 12px; 
+  font-size: 22px; font-weight: 800;
+}
+.contact-item p, .contact-item a { 
+  color: rgba(255,255,255,0.94); 
+  text-decoration: none; 
+  font-size: 18px; line-height: 1.85;
+}
+.contact-item a:hover { color: var(--turtle-green); }
+.contact-form {
+  background: white; padding: 65px;
+  border-radius: 35px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.14);
+  border: 4px solid rgba(0,105,148,0.2);
+}
+.contact-form h3 {
+  color: var(--primary); margin-bottom: 35px;
+  font-size: 34px; font-weight: 900;
+}
+.contact-form input, 
+.contact-form select,
+.contact-form textarea {
+  width: 100%; padding: 26px 30px; 
+  margin-bottom: 30px;
+  border: 3px solid #e0e6ed; 
+  border-radius: 25px;
+  font-family: inherit; font-size: 17px; 
+  transition: 0.3s;
+}
+.contact-form input:focus, 
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none; border-color: var(--ocean-blue);
+  box-shadow: 0 0 0 8px rgba(0,105,148,0.2);
+}
+.contact-form textarea { 
+  min-height: 200px; resize: vertical; 
+}
+
+/* MAP */
+.map-section { padding: 0; }
+.map-section iframe { 
+  width: 100%; height: 700px; border: 0; 
+  display: block; filter: grayscale(0.25); 
+}
+
+/* CTA BANNER */
+.cta-banner {
+  background: var(--gradient-turtle);
+  padding: 115px 5%; text-align: center; 
+  color: white; position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1600') center/cover;
+  opacity: 0.15; z-index: 0;
+}
+.cta-content {
+  position: relative; z-index: 1; 
+  max-width: 1100px; margin: 0 auto;
+}
+.cta-banner h2 { 
+  font-size: clamp(2.6rem, 6.5vw, 5rem); 
+  margin-bottom: 28px; font-weight: 900;
+  text-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+.cta-banner p { 
+  font-size: 23px; margin-bottom: 48px; 
+  opacity: 0.98; line-height: 1.9;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, #001429, var(--dark));
+  color: white; padding: 90px 5% 40px;
+}
+.footer-grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 70px; max-width: 1600px; margin: 0 auto 70px;
+}
+.footer-col h4 {
+  color: var(--turtle-green); margin-bottom: 35px; 
+  font-size: 25px;
+  font-family: 'Satisfy', cursive; 
+  font-weight: 900;
+}
+.footer-col p, .footer-col li { 
+  font-size: 17px; opacity: 0.95; 
+  margin-bottom: 17px; line-height: 2; 
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li a { 
+  color: white; text-decoration: none; 
+  transition: 0.3s; cursor: pointer; 
+}
+.footer-col ul li a:hover { 
+  color: var(--turtle-green); padding-left: 15px; 
+}
+.social-icons { 
+  display: flex; gap: 24px; margin-top: 30px; 
+}
+.social-icons a {
+  width: 64px; height: 64px; 
+  background: rgba(45,80,22,0.25);
+  border-radius: 50%; display: flex; 
+  align-items: center; justify-content: center;
+  color: white; text-decoration: none; 
+  transition: 0.5s;
+  border: 3px solid rgba(45,80,22,0.4);
+  font-size: 26px;
+}
+.social-icons a:hover { 
+  background: var(--turtle-green); 
+  transform: translateY(-12px) rotate(360deg);
+  box-shadow: 0 20px 60px rgba(45,80,22,0.8);
+  border-color: var(--turtle-green);
+}
+.footer-bottom {
+  text-align: center; padding-top: 40px;
+  border-top: 3px solid rgba(45,80,22,0.3); 
+  font-size: 17px; opacity: 0.94;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed; top: 86px; right: -100%; 
+    width: 92%; height: 100vh;
+    background: var(--ocean-blue); 
+    flex-direction: column; padding: 70px 60px;
+    transition: 0.6s; gap: 35px; 
+    box-shadow: -15px 0 70px rgba(0,0,0,0.7);
+  }
+  .nav-links.show { right: 0; }
+  .menu-toggle { display: block; }
+  .contact-wrap { 
+    grid-template-columns: 1fr; gap: 60px;
+  }
+  .section { padding: 95px 5%; }
+  .hero { min-height: 700px; }
+  .marine-grid, .species-grid, .sites-grid, .gallery-preview {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <i class="fas fa-water"></i> Ocean Life
+  </div>
+  <ul class="nav-links" id="navLinks">
+    <li><a class="nav-link active" data-page="home">Home</a></li>
+    <li><a class="nav-link" data-page="turtles">Turtles</a></li>
+    <li><a class="nav-link" data-page="sharks">Sharks</a></li>
+    <li><a class="nav-link" data-page="marine-life">Marine Life</a></li>
+    <li><a class="nav-link" data-page="contact">Contact</a></li>
+  </ul>
+  <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('show')">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- ============ HOME PAGE ============ -->
+<div class="page active" id="home">
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🌊 MARINE WILDLIFE PARADISE 🌊</div>
+      <h1><span>TURTLES</span> & <span>SHARKS</span><br>of Gili Islands</h1>
+      <p>Encounter magnificent sea turtles, graceful reef sharks, and incredible marine biodiversity in the pristine waters surrounding Gili Trawangan, Indonesia.</p>
+      <div class="btn-group">
+        <a href="https://bluemarlingilitrawangan.com/" target="_blank" class="btn btn-primary">Book Marine Dive</a>
+        <a class="btn btn-outline nav-link" data-page="turtles">Meet the Turtles</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <span class="subtitle">UNDERWATER PARADISE</span>
+      <h2>Marine Life Diving Excellence</h2>
+      <p>Experience world-class encounters with sea turtles, sharks, and diverse marine species in one of Southeast Asia's most pristine diving destinations</p>
+    </div>
+    <div class="content-block">
+      <p>The waters surrounding Gili Trawangan offer some of the most consistent and spectacular marine wildlife encounters in all of Indonesia. When divers speak of <a href="https://bluemarlingilitrawangan.com/" target="_blank"><strong>turtle diving gili trawangan</strong></a>, they're describing an experience that transcends typical wildlife diving — here, encountering green sea turtles isn't a matter of luck but an expected highlight of virtually every dive. The healthy turtle populations thriving in these protected waters have made the Gili Islands internationally renowned among divers seeking guaranteed marine megafauna encounters in comfortable, accessible conditions.</p>
+
+      <p>Beyond turtles, the <a href="https://g.page/r/CZ4ay9VWZT6mEAE" target="_blank"><strong>shark diving gili islands</strong></a> experience introduces divers to graceful reef sharks, harmless to humans yet magnificent to observe in their natural hunting grounds. White-tip and black-tip reef sharks patrol the deeper walls and channels, their sleek forms perfectly adapted to life on the reef. Bamboo sharks rest in sandy patches, camouflaged against the seafloor. The presence of healthy shark populations indicates the overall health of the marine ecosystem, reflecting successful conservation efforts and the abundance of prey species supporting these apex predators.</p>
+
+      <h3>Why Marine Life Thrives Here</h3>
+      <p>The exceptional marine biodiversity surrounding the Gili Islands results from a unique combination of factors. The islands sit at the convergence of oceanic currents that deliver nutrient-rich waters, supporting abundant plankton blooms that form the foundation of the marine food chain. Protected marine areas established through community conservation initiatives have allowed fish populations to recover and thrive, attracting larger predators and creating the balanced ecosystems necessary for biodiversity. The absence of large-scale commercial fishing pressure, combined with active reef restoration projects, has enabled coral systems to flourish, providing habitat for the countless species that make these waters so extraordinary.</p>
+
+      <p>Water temperatures remaining warm year-round (27-29°C/80-84°F) support tropical species diversity impossible in cooler waters. The varied topography — from shallow coral gardens to dramatic walls dropping into deep water — creates microhabitats suitable for different species with varying environmental preferences. Sandy patches between coral heads provide feeding grounds for rays, sandy-bottom specialists, and camouflaged predators. Coral bommies rising from sand create cleaning stations where larger species like turtles and sharks visit to have parasites removed by specialized cleaner fish and shrimp.</p>
+
+      <div class="highlight-box">
+        <p><strong>🐢 Conservation Success Story</strong> — The Gili Islands' turtle populations represent a remarkable conservation achievement. Once threatened by egg collection and habitat destruction, green and hawksbill turtle numbers have rebounded dramatically thanks to protection efforts, nesting site conservation, and community commitment to marine stewardship.</p>
+      </div>
+
+      <p>The commitment to marine conservation extends throughout the local community, with dive operators, accommodation providers, and residents all invested in protecting the underwater environment that sustains the local economy. Regular beach cleanups remove plastic and debris before it enters the ocean. Mooring buoys at popular dive sites prevent anchor damage to coral. Educational programs teach visitors about responsible diving practices and marine life interactions. This community-wide dedication to ocean health ensures that the marine biodiversity you encounter today will remain for future generations to experience.</p>
+
+      <h3>Blue Marlin's Marine Life Expertise</h3>
+      <p>Our decades of diving these waters have developed intimate knowledge of where and when specific species appear, what behaviors to expect, and how to position divers for optimal encounters while minimizing disturbance to marine life. Our dive guides know which cleaning stations turtles frequent, the time of day sharks are most active, the seasonal patterns of pelagic visitors, and the subtle environmental cues indicating when special encounters might occur. This expertise, combined with our commitment to responsible wildlife diving practices, ensures you enjoy spectacular encounters while contributing to the conservation of the species you're privileged to observe.</p>
+
+      <p>Every marine life dive includes thorough briefings covering proper interaction protocols, photography guidelines that prioritize animal welfare over perfect shots, and explanations of the ecological relationships you'll witness underwater. Understanding what you're seeing — why turtles visit cleaning stations, how sharks hunt, what symbiotic relationships exist between species — transforms encounters from simple sightings into profound appreciation of complex marine ecosystems. For those seeking even more extraordinary underwater adventures, <a href="https://YOUR-SURGE-SITENAME.surge.sh" target="_blank">start your diving journey</a> with foundational training that opens access to all these incredible marine experiences.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--gray);">
+    <div class="section-title">
+      <span class="subtitle">INCREDIBLE ENCOUNTERS</span>
+      <h2>Featured Marine Species</h2>
+      <p>The magnificent creatures you'll encounter in Gili Trawangan's crystal-clear waters</p>
+    </div>
+    <div class="marine-grid">
+      <div class="marine-card">
+        <div class="marine-img">
+          <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800" alt="Green Sea Turtle">
+          <div class="marine-badge">MOST COMMON</div>
+        </div>
+        <div class="marine-body">
+          <span class="marine-icon">🐢</span>
+          <h3>Green Sea Turtles</h3>
+          <p>Encounter these magnificent reptiles on virtually every dive, often seeing multiple individuals grazing on seagrass or resting at cleaning stations.</p>
+          <ul class="marine-features">
+            <li><i class="fas fa-check-circle"></i> Seen on 95%+ of dives</li>
+            <li><i class="fas fa-check-circle"></i> Up to 1.5 meters in length</li>
+            <li><i class="fas fa-check-circle"></i> Calm and approachable</li>
+            <li><i class="fas fa-check-circle"></i> Protected species</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="marine-card">
+        <div class="marine-img">
+          <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=800" alt="Reef Sharks">
+          <div class="marine-badge">THRILLING</div>
+        </div>
+        <div class="marine-body">
+          <span class="marine-icon">🦈</span>
+          <h3>Reef Sharks</h3>
+          <p>White-tip and black-tip reef sharks patrol the deeper areas, completely harmless to divers but spectacular to observe.</p>
+          <ul class="marine-features">
+            <li><i class="fas fa-check-circle"></i> Multiple species present</li>
+            <li><i class="fas fa-check-circle"></i> Active hunters to observe</li>
+            <li><i><i class="fas fa-check-circle"></i> Safe for divers</i></li>
+            <li><i class="fas fa-check-circle"></i> Year-round sightings</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="marine-card">
+        <div class="marine-img">
+          <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=800" alt="Coral Reef">
+          <div class="marine-badge">BIODIVERSITY</div>
+        </div>
+        <div class="marine-body">
+          <span class="marine-icon">🐠</span>
+          <h3>Tropical Fish</h3>
+          <p>Countless species of colorful reef fish create living kaleidoscopes of color and movement on every dive.</p>
+          <ul class="marine-features">
+            <li><i class="fas fa-check-circle"></i> Hundreds of species</li>
+            <li><i class="fas fa-check-circle"></i> Vibrant coral systems</li>
+            <li><i class="fas fa-check-circle"></i> Schools and individuals</li>
+            <li><i class="fas fa-check-circle"></i> Photographer's paradise</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="species-section">
+    <div class="species-content">
+      <div class="section-title">
+        <h2 style="color: white;">Marine Biodiversity Showcase</h2>
+        <p style="color: rgba(255,255,255,0.9);">The incredible variety of marine life calling Gili Trawangan home</p>
+      </div>
+      <div class="species-grid">
+        <div class="species-card">
+          <span class="species-emoji">🐢</span>
+          <h4>Sea Turtles</h4>
+          <p>Green and hawksbill turtles in healthy populations, often multiple per dive</p>
+        </div>
+        <div class="species-card">
+          <span class="species-emoji">🦈</span>
+          <h4>Reef Sharks</h4>
+          <p>White-tip, black-tip, and bamboo sharks patrolling the reefs and channels</p>
+        </div>
+        <div class="species-card">
+          <span class="species-emoji">🐙</span>
+          <h4>Octopus</h4>
+          <p>Masters of camouflage hunting at dusk and hiding in reef crevices</p>
+        </div>
+        <div class="species-card">
+          <span class="species-emoji">🦑</span>
+          <h4>Cuttlefish</h4>
+          <p>Changing colors and patterns, displaying remarkable intelligence</p>
+        </div>
+        <div class="species-card">
+          <span class="species-emoji">🐡</span>
+          <h4>Pufferfish</h4>
+          <p>Various puffer species grazing on coral and investigating divers curiously</p>
+        </div>
+        <div class="species-card">
+          <span class="species-emoji">🦞</span>
+          <h4>Lobsters</h4>
+          <p>Spiny lobsters hiding in overhangs and emerging to hunt at night</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ TURTLES PAGE ============ -->
+<div class="page" id="turtles">
+  <section class="section">
+    <div class="section-title">
+      <span class="subtitle">🐢 GENTLE GIANTS</span>
+      <h2>Sea Turtle Encounters</h2>
+      <p>Everything you need to know about diving with the magnificent sea turtles of Gili Trawangan</p>
+    </div>
+    <div class="content-block">
+      <p>Sea turtles represent one of the ocean's most beloved and charismatic megafauna species, and the Gili Islands offer some of the world's most reliable turtle encounters. These ancient reptiles, whose ancestors swam alongside dinosaurs 110 million years ago, maintain populations in these waters that astound marine biologists and delight divers. On typical dives around Gili Trawangan, encountering 5-10 individual turtles isn't unusual, with some dives producing 20+ sightings as you move through areas where turtles congregate to feed, rest, and interact with cleaning organisms.</p>
+
+      <h3>Green Sea Turtles (Chelonia mydas)</h3>
+      <p>The green sea turtle constitutes the most commonly encountered turtle species around the Gili Islands, with a resident population that marine researchers estimate in the hundreds. These magnificent reptiles can reach 1.5 meters in length and weigh over 150 kilograms at full maturity, though most individuals divers encounter measure 60-100 centimeters. Despite their name, green sea turtles aren't always green — their coloration ranges from olive to brown to nearly black, with the "green" name actually referring to the greenish color of their fat, a result of their herbivorous diet of seagrass and algae.</p>
+
+      <p>Green turtles display remarkable site fidelity, with individual animals returning to the same feeding areas, resting spots, and cleaning stations repeatedly. Experienced dive guides recognize specific individuals by unique shell patterns, facial markings, and behavioral quirks, sometimes encountering the same turtles over periods of years. This familiarity allows guides to predict where specific individuals might be found and understand their comfort levels around divers, ensuring encounters that respect the animals' space while still providing incredible photographic and observational opportunities.</p>
+
+      <div class="info-card">
+        <h4 style="color: var(--primary); margin-bottom: 18px;"><i class="fas fa-info-circle"></i> Turtle Encounter Protocol:</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 12px 0 12px 45px; position: relative;">
+            <i class="fas fa-hand-paper" style="position: absolute; left: 0; color: var(--turtle-green); font-size: 20px;"></i>
+            Never touch, chase, or harass turtles — maintain respectful distance
+          </li>
+          <li style="padding: 12px 0 12px 45px; position: relative;">
+            <i class="fas fa-camera" style="position: absolute; left: 0; color: var(--turtle-green); font-size: 20px;"></i>
+            No flash photography when turtles are surfacing to breathe
+          </li>
+          <li style="padding: 12px 0 12px 45px; position: relative;">
+            <i class="fas fa-route" style="position: absolute; left: 0; color: var(--turtle-green); font-size: 20px;"></i>
+            Never block a turtle's path to the surface for air
+          </li>
+          <li style="padding: 12px 0 12px 45px; position: relative;">
+            <i class="fas fa-volume-mute" style="position: absolute; left: 0; color: var(--turtle-green); font-size: 20px;"></i>
+            Approach slowly and quietly, avoid sudden movements
+          </li>
+          <li style="padding: 12px 0 12px 45px; position: relative;">
+            <i class="fas fa-clock" style="position: absolute; left: 0; color: var(--turtle-green); font-size: 20px;"></i>
+            Limit interaction time — observe then move on
+          </li>
+        </ul>
+      </div>
+
+      <h3>Hawksbill Turtles (Eretmochelys imbricata)</h3>
+      <p>While less common than greens, hawksbill turtles also inhabit the waters around Gili Trawangan, particularly in areas with healthy hard coral growth. Hawksbills are distinguished by their narrow, pointed beaks (resembling a hawk's bill, hence the name), more colorful shell patterns featuring amber, brown, and gold tortoiseshell markings, and their preference for coral reef habitats where they feed on sponges. These critically endangered turtles were historically hunted nearly to extinction for their beautiful shells used in jewelry and decorative items, making every encounter with wild hawksbills a privileged experience.</p>
+
+      <p>Hawksbills tend to be slightly smaller than greens and often more skittish around divers, requiring greater patience and subtlety to observe without causing disturbance. Their specialized diet of sponges plays an important ecological role in reef health, controlling sponge populations that might otherwise overgrow and damage coral. Watching a hawksbill use its pointed beak to extract sponges from crevices demonstrates remarkable feeding adaptation and provides insight into the complex ecological relationships maintaining healthy reef systems.</p>
+
+      <h3>Turtle Life Cycle and Behavior</h3>
+      <p>Sea turtles are reptiles, meaning they breathe air and must surface regularly despite spending virtually their entire lives in the ocean. Turtles can hold their breath for extended periods — 45 minutes to several hours when resting, though actively swimming turtles typically surface every 5-15 minutes. Observing a turtle's graceful ascent to the surface, the gentle exhalation and quick inhalation at the water's surface, and the equally elegant descent back to depth never loses its magic regardless of how many times you've witnessed it.</p>
+
+      <p>Female turtles return to nest on the same beaches where they themselves hatched, sometimes traveling thousands of kilometers from feeding grounds to nesting sites. The Gili Islands serve primarily as feeding and developmental habitat rather than major nesting grounds, though occasional nesting does occur. The turtles you encounter while diving are likely juveniles and sub-adults using the rich feeding grounds to grow and mature before eventually making their own epic migrations to breeding areas and nesting beaches elsewhere in Indonesia and beyond.</p>
+
+      <h3>Conservation and Threats</h3>
+      <p>Despite their abundance around the Gili Islands today, sea turtles face serious threats throughout their range. Plastic pollution causes deaths when turtles mistake bags for jellyfish and consume them. Fishing gear entanglement drowns turtles unable to surface for air. Coastal development destroys nesting beaches. Climate change affects sand temperatures, which determine hatchling sex ratios. The healthy turtle populations divers enjoy around Gili Trawangan exist because of active conservation efforts including nesting beach protection, anti-poaching patrols, fishing gear modifications, plastic reduction initiatives, and the economic value diving tourism places on living turtles versus dead ones.</p>
+
+      <p>By choosing to dive with responsible operators committed to marine conservation, you directly support the protection of these magnificent creatures. The revenue generated by diving tourism provides economic incentive for communities to protect turtles rather than harvest them. Your presence as a diver observing turtles in the wild demonstrates their value alive, swimming free, rather than as soup, shells, or eggs. Every encounter you enjoy represents a conservation success story worth celebrating and supporting.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--gray);">
+    <div class="section-title">
+      <span class="subtitle">BEST LOCATIONS</span>
+      <h2>Top Turtle Diving Sites</h2>
+      <p>Where to find the highest concentrations of sea turtles around Gili Trawangan</p>
+    </div>
+    <div class="sites-grid">
+      <div class="site-card">
+        <div class="site-icon"><i class="fas fa-anchor"></i></div>
+        <h4>Turtle Heaven</h4>
+        <p>Aptly named site with virtually guaranteed multiple turtle sightings, shallow enough for all certification levels.</p>
+      </div>
+      <div class="site-card">
+        <div class="site-icon"><i class="fas fa-water"></i></div>
+        <h4>Meno Wall</h4>
+        <p>Dramatic wall dive between Gili Meno and Gili Air where turtles cruise the currents and rest in overhangs.</p>
+      </div>
+      <div class="site-card">
+        <div class="site-icon"><i class="fas fa-ship"></i></div>
+        <h4>Japanese Wreck</h4>
+        <p>Shallow shipwreck providing habitat for turtles alongside diverse fish populations and healthy coral growth.</p>
+      </div>
+      <div class="site-card">
+        <div class="site-icon"><i class="fas fa-leaf"></i></div>
+        <h4>Coral Garden</h4>
+        <p>Extensive seagrass beds where green turtles feed, often allowing very close approach while they graze.</p>
+      </div>
+      <div class="site-card">
+        <div class="site-icon"><i class="fas fa-star"></i></div>
+        <h4>Shark Point</h4>
+        <p>While famous for sharks, also features regular turtle sightings and vibrant coral formations.</p>
+      </div>
+      <div class="site-card">
+        <div class="site-icon"><i class="fas fa-sun"></i></div>
+        <h4>Sunset Point</h4>
+        <p>Cleaning station where turtles visit to have parasites removed, offering extended observation opportunities.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ SHARKS PAGE ============ -->
+<div class="page" id="sharks">
+  <section class="section">
+    <div class="section-title">
+      <span class="subtitle">🦈 APEX PREDATORS</span>
+      <h2>Reef Shark Encounters</h2>
+      <p>Meeting the graceful predators of Gili Islands' underwater realm</p>
+    </div>
+    <div class="content-block">
+      <p>Shark encounters evoke strong reactions — for some divers, the ultimate thrill representing everything exciting about diving, while others approach with trepidation based on media-driven misconceptions about shark behavior. The reality of shark diving in the Gili Islands falls firmly in the "thrilling but safe" category, with the species present posing zero threat to divers while providing spectacular opportunities to observe these magnificent predators in their natural environment. Understanding shark behavior, ecology, and the important role they play in healthy marine ecosystems transforms encounters from fearful moments into profound appreciation of evolution's masterpiece predators.</p>
+
+      <h3>White-Tip Reef Sharks (Triaenodon obesus)</h3>
+      <p>White-tip reef sharks constitute the most commonly encountered shark species around the Gili Islands, identifiable by the distinctive white markings on the tips of their dorsal and tail fins. These relatively small sharks typically measure 1-1.6 meters in length, with slender bodies perfectly adapted to maneuvering through the complex three-dimensional structure of coral reefs. Unlike many shark species that must swim continuously to breathe, white-tips can pump water over their gills while stationary, allowing them to rest during daylight hours in caves, under overhangs, or in coral crevices.</p>
+
+      <p>Observing white-tip reef sharks provides insight into their role as nocturnal hunters. During daytime dives, you'll often encounter them resting, sometimes in small groups sharing favorite resting spots. Their relaxed demeanor while resting allows for close observation and photography, though respectful distance should always be maintained. As dusk approaches, white-tips become more active, beginning their nightly patrols hunting for sleeping fish, octopus, crustaceans, and other reef inhabitants. Night dives offer completely different shark behaviors, with white-tips actively hunting, their sensory systems perfectly adapted to detecting prey in darkness.</p>
+
+      <h3>Black-Tip Reef Sharks (Carcharhinus melanopterus)</h3>
+      <p>Black-tip reef sharks, marked by prominent black tips on all fins, frequent shallower areas including the reef flats and lagoons. These sharks demonstrate more active swimming patterns than white-tips, constantly cruising their territories in search of prey. Black-tips are particularly spectacular to observe when hunting, displaying bursts of speed and agility as they pursue small fish through shallow water. Their tendency to hunt in the shallows sometimes brings their dorsal fins above the surface, the classic "shark fin cutting through water" image that captures public imagination.</p>
+
+      <p>Despite their more active nature and association with shallow water (where humans swim and snorkel), black-tip reef sharks pose no threat to people. They feed on small fish far too small to consider humans as prey, and their instinct when encountering something as large as a diver is to maintain distance or depart the area. The key to enjoying black-tip encounters involves moving slowly, maintaining neutral buoyancy to avoid appearing as a threat, and allowing the sharks to determine comfortable approach distances rather than chasing them for closer looks or photographs.</p>
+
+      <h3>Bamboo Sharks (Chiloscyllium punctatum)</h3>
+      <p>Bamboo sharks represent a completely different shark family (Hemiscylliidae) with entirely different behaviors and hunting strategies compared to the more familiar requiem sharks (white-tips and black-tips). These bottom-dwelling sharks spend daylight hours resting on sandy patches between coral heads, perfectly camouflaged against the seafloor through mottled brown patterns. Their small size (typically under 1 meter) and sedentary nature during day mean many divers swim directly over bamboo sharks without noticing them, only spotting these cryptic predators when guides point them out.</p>
+
+      <p>Bamboo sharks possess remarkable adaptations for their lifestyle, including the ability to "walk" across the seafloor using muscular pectoral fins. Their diet consists of bottom-dwelling invertebrates and small fish that they hunt primarily at night using well-developed sensory systems detecting electrical fields and chemical traces. Observing a bamboo shark resting on the sand provides excellent opportunities for macro photography and appreciation of the incredible diversity within the broader "shark" category — these small, harmless, bottom-dwellers share remarkably little with the fast-swimming, midwater predators most people envision when thinking "shark."</p>
+
+      <div class="highlight-box">
+        <p><strong>🦈 Shark Safety Facts</strong> — The reef sharks found around Gili Trawangan have never attacked a diver. These species feed on small fish and invertebrates, with humans far too large to register as prey. Millions of shark dives occur globally each year with virtually zero incidents involving these species.</p>
+      </div>
+
+      <h3>Shark Conservation Importance</h3>
+      <p>Sharks play crucial roles as apex predators in marine ecosystems, with their presence indicating overall ecosystem health. By controlling populations of mid-level predators and removing sick or weak prey animals, sharks maintain the balance necessary for biodiversity. Reef systems with healthy shark populations demonstrate greater resilience to environmental stresses compared to reefs where sharks have been removed through overfishing. The presence of white-tips, black-tips, and other shark species around the Gili Islands reflects the effectiveness of marine protection efforts and the value the local community places on maintaining healthy ocean ecosystems.</p>
+
+      <p>Globally, shark populations face severe threats from overfishing, particularly for shark fin soup trade, bycatch in other fisheries, and habitat destruction. Some shark species have declined by over 90% in recent decades, with several now facing extinction risks. The sharks you encounter while diving in the Gili Islands represent conservation successes worth celebrating — protected populations thriving in marine sanctuaries thanks to communities recognizing their ecological and economic value alive versus dead. Every shark encounter you enjoy supports conservation by demonstrating the tourism value of healthy shark populations.</p>
+    </div>
+  </section>
+
+  <section class="conservation-panel">
+    <h3>Marine Conservation Commitment</h3>
+    <p>Blue Marlin Dive actively supports marine conservation through multiple initiatives protecting the ocean environments and species you enjoy while diving:</p>
+    <ul>
+      <li>Participation in reef restoration and coral transplantation projects</li>
+      <li>Regular beach and underwater cleanup activities removing plastic and debris</li>
+      <li>Environmental education programs for divers emphasizing responsible practices</li>
+      <li>Support for marine protected area enforcement and expansion</li>
+      <li>Collaboration with marine research programs studying local populations</li>
+      <li>Zero-tolerance policy for any harassment or touching of marine life</li>
+      <li>Investment in moorings preventing anchor damage to coral systems</li>
+      <li>Contributions to turtle nesting site protection programs</li>
+    </ul>
+  </section>
+</div>
+
+<!-- ============ MARINE LIFE PAGE ============ -->
+<div class="page" id="marine-life">
+  <section class="section">
+    <div class="section-title">
+      <span class="subtitle">BIODIVERSITY PARADISE</span>
+      <h2>Complete Marine Ecosystem</h2>
+      <p>Beyond turtles and sharks — exploring the full spectrum of marine biodiversity</p>
+    </div>
+    <div class="content-block">
+      <p>While turtles and sharks rightfully capture attention as marine megafauna, the complete underwater experience around Gili Trawangan encompasses far more than these charismatic species. Every dive reveals layers of biodiversity from microscopic plankton through schooling fish to apex predators, all interconnected through complex ecological relationships that have evolved over millions of years. Understanding and appreciating this biodiversity transforms diving from simple wildlife viewing into genuine ecological education, revealing the intricate connections maintaining healthy ocean systems.</p>
+
+      <h3>Coral Reef Foundation</h3>
+      <p>The foundation of all biodiversity around the Gili Islands begins with the coral reefs themselves — living structures built by countless individual coral polyps depositing calcium carbonate skeletons generation after generation. These reefs provide the three-dimensional structure creating habitat complexity supporting thousands of species. Hard corals of dozens of species create the permanent framework, while soft corals, sea fans, and sponges add additional structure and diversity. The coral communities around Gili Trawangan have rebounded remarkably from historical damage, demonstrating the resilience of properly protected reef systems.</p>
+
+      <h3>Reef Fish Diversity</h3>
+      <p>Hundreds of tropical reef fish species inhabit the waters around Gili Trawangan, from tiny gobies and blennies hiding in coral crevices through massive groupers lurking under overhangs. Schools of fusiliers create living clouds above the reef, their synchronized movements mesmerizing to observe. Angelfish and butterflyfish display spectacular coloration while feeding on coral polyps, sponges, and algae. Parrotfish use powerful beaks to scrape algae from coral, grinding up coral skeleton in the process and excreting it as sand — the beautiful white sand beaches surrounding the Gili Islands are literally parrotfish poop accumulated over thousands of years.</p>
+
+      <p>Predatory fish including groupers, snappers, trevally, and barracuda hunt the reef fish populations, creating the predator-prey dynamics essential for ecosystem balance. Observing hunting behaviors — a grouper stalking prey, a school of trevally coordinating to surround baitfish, barracuda hanging motionless before striking — provides insight into the strategies evolution has refined for underwater predation. Cleaner fish stations where larger species visit to have parasites removed demonstrate remarkable interspecies cooperation, with cleaners receiving meals while their "clients" gain health benefits from parasite removal.</p>
+
+      <h3>Invertebrate Wonders</h3>
+      <p>Beyond vertebrate fish, the incredible diversity of invertebrate species provides endless fascination for observant divers. Nudibranchs (sea slugs) display colors and patterns so vibrant they seem artificial, with hundreds of species present in the Gili Islands waters alone. Crustaceans including colorful mantis shrimp, camouflaged decorator crabs, and cleaner shrimp all play specific ecological roles. Octopus and cuttlefish demonstrate remarkable intelligence and communication through rapid color and texture changes. Giant clams nestle in coral displaying iridescent mantles containing symbiotic algae. Christmas tree worms retract instantly into coral heads when sensing movement, then slowly re-emerge in spectacular spirals.</p>
+
+      <p>The invertebrate diversity extends into species most divers never notice without guidance — tiny commensal shrimp living among coral branches, cryptic crabs camouflaged perfectly against their backgrounds, flatworms gliding across coral surfaces. Macro photography enthusiasts can spend entire dives exploring single coral heads, discovering new species with every careful examination. Night dives reveal completely different invertebrate communities as nocturnal species emerge and daytime species retreat into hiding.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--gray);">
+    <div class="section-title">
+      <span class="subtitle">UNDERWATER GALLERY</span>
+      <h2>Marine Life Photography</h2>
+      <p>Capturing the incredible biodiversity of Gili Trawangan's underwater world</p>
+    </div>
+    <div class="gallery-preview">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600" alt="Sea Turtle">
+        <div class="gallery-overlay">
+          <h5>Green Sea Turtle</h5>
+          <p>Gracefully gliding through crystal waters</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=600" alt="Reef Shark">
+        <div class="gallery-overlay">
+          <h5>White-Tip Reef Shark</h5>
+          <p>Patrolling the reef at dusk</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=600" alt="Coral Reef">
+        <div class="gallery-overlay">
+          <h5>Vibrant Coral Garden</h5>
+          <p>Thriving ecosystem bursting with life</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Tropical Fish">
+        <div class="gallery-overlay">
+          <h5>Tropical Fish School</h5>
+          <p>Synchronized swimming spectacle</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Marine Life">
+        <div class="gallery-overlay">
+          <h5>Diverse Marine Species</h5>
+          <p>Incredible biodiversity showcase</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1583244685026-d8519b5e3d21?w=600" alt="Underwater Scene">
+        <div class="gallery-overlay">
+          <h5>Underwater Paradise</h5>
+          <p>Crystal clear Gili waters</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ CONTACT PAGE ============ -->
+<div class="page" id="contact">
+  <section class="section">
+    <div class="section-title">
+      <span class="subtitle">PLAN YOUR ADVENTURE</span>
+      <h2>Contact Marine Life Team</h2>
+      <p>Ready to experience incredible turtle and shark encounters? Let's plan your underwater adventure</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info-box">
+        <h3>Marine Dive Info</h3>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <h4>Dive Centre Location</h4>
+            <p>Blue Marlin Dive<br>Main Beach Road<br>Gili Trawangan, Indonesia</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <h4>Phone & WhatsApp</h4>
+            <p><a href="tel:+6282147850413">+62 (0)821-4785-0413</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <h4>Email Address</h4>
+            <p><a href="mailto:info@bluemarlingilitrawangan.com">info@bluemarlingilitrawangan.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <h4>Operating Hours</h4>
+            <p>Daily: 10:00 AM - 10:00 PM<br>Dive trips: 8:00 AM & 2:00 PM</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <h4>Website</h4>
+            <p><a href="https://bluemarlingilitrawangan.com/" target="_blank">bluemarlingilitrawangan.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Marine Life Dive Booking</h3>
+        <form onsubmit="event.preventDefault(); alert('Thank you! We will confirm your marine life diving adventure within 24 hours.');">
+          <input type="text" placeholder="Full Name *" required>
+          <input type="email" placeholder="Email Address *" required>
+          <input type="tel" placeholder="Phone Number (with country code)">
+          <select required>
+            <option value="">Select Dive Interest *</option>
+            <option>Turtle Diving</option>
+            <option>Shark Diving</option>
+            <option>General Marine Life</option>
+            <option>Photography Diving</option>
+            <option>Snorkeling with Marine Life</option>
+            <option>Multi-Day Diving Package</option>
+          </select>
+          <input type="text" placeholder="Certification Level (if diving)">
+          <input type="date" placeholder="Preferred Date">
+          <textarea placeholder="Tell us about your interests, experience level, what marine species you're most excited to see, and any questions..." required></textarea>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Request Booking</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.7891!2d116.0395!3d-8.3490!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sGili+Trawangan!5e0!3m2!1sen!2sid!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4><i class="fas fa-water"></i> Ocean Life Blue Marlin</h4>
+      <p>Experience incredible turtle diving and shark encounters in the pristine waters of Gili Trawangan. Committed to marine conservation and responsible wildlife diving.</p>
+      <div class="social-icons">
+        <a href="https://web.facebook.com/BlueMarlinGiliTrawangan" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/bluemarlindivegilit/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/user/BlueMarlinMedia" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Navigation</h4>
+      <ul>
+        <li><a class="nav-link" data-page="home">Home</a></li>
+        <li><a class="nav-link" data-page="turtles">Turtle Diving</a></li>
+        <li><a class="nav-link" data-page="sharks">Shark Encounters</a></li>
+        <li><a class="nav-link" data-page="marine-life">Marine Biodiversity</a></li>
+        <li><a class="nav-link" data-page="contact">Book Dive</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Marine Experiences</h4>
+      <ul>
+        <li><a href="https://bluemarlingilitrawangan.com/" target="_blank">Turtle Diving</a></li>
+        <li><a href="https://g.page/r/CZ4ay9VWZT6mEAE" target="_blank">Shark Diving</a></li>
+        <li><a href="https://bluemarlingilitrawangan.com/" target="_blank">Marine Photography</a></li>
+        <li><a href="https://YOUR-SURGE-SITENAME.surge.sh" target="_blank">Learn to Dive</a></li>
+        <li><a href="https://bluemarlingilitrawangan.com/" target="_blank">Conservation Programs</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Information</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Main Beach Road<br>Gili Trawangan, Indonesia</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+6282147850413" style="color: white;">+62 (0)821-4785-0413</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:info@bluemarlingilitrawangan.com" style="color: white;">info@bluemarlingilitrawangan.com</a></p>
+      <p><i class="fas fa-clock"></i> 10:00 AM - 10:00 PM Daily</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Blue Marlin Marine Life Diving - Turtle & Shark Encounters | Gili Trawangan, Indonesia</p>
+  </div>
+</footer>
+
+<script>
+// Page Navigation System
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetPage = this.getAttribute('data-page');
+    
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Show target page
+    document.getElementById(targetPage).classList.add('active');
+    
+    // Update nav active states
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.querySelectorAll(`.nav-link[data-page="${targetPage}"]`).forEach(l => l.classList.add('active'));
+    
+    // Close mobile menu
+    document.getElementById('navLinks').classList.remove('show');
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 100) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Close mobile menu on outside click
+document.addEventListener('click', function(e) {
+  const navLinks = document.getElementById('navLinks');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+    navLinks.classList.remove('show');
+  }
+});
+</script>
+
+</body>
+</html>
